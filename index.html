@@ -227,7 +227,7 @@
 
   .bg-item {
     display: grid;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 160px 1fr auto;
     gap: 24px;
     padding: 20px 0;
     border-bottom: 1px solid var(--border);
@@ -246,6 +246,154 @@
   .bg-role {
     font-size: 14px;
     color: var(--muted);
+  }
+
+  .bg-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── OPEN SOURCE PROJECTS ── */
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .project-item {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-item:last-child { border-bottom: none; }
+
+  .project-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .project-name {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .project-name:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .project-status {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    border: 1px solid #3a3a10;
+    background: #141408;
+    padding: 2px 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+    max-width: 600px;
+  }
+
+  /* ── WRITING & TEACHING ── */
+  .writing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .writing-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+
+  .writing-item:last-child { border-bottom: none; }
+
+  .writing-platform {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-top: 2px;
+  }
+
+  .writing-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .writing-title {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    width: fit-content;
+  }
+
+  .writing-title:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .writing-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .cert-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cert-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+
+  .cert-item:last-child { border-bottom: none; }
+
+  .cert-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .cert-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
   }
 
   /* ── TOOLS ── */
@@ -391,6 +539,9 @@
   @media (max-width: 600px) {
     .services { grid-template-columns: 1fr; }
     .bg-item { grid-template-columns: 1fr; gap: 4px; }
+    .bg-date { display: none; }
+    .writing-item { grid-template-columns: 1fr; gap: 4px; }
+    .cert-item { grid-template-columns: 1fr; gap: 2px; }
     header { padding: 52px 0 48px; }
     .cve-block { flex-direction: column; align-items: flex-start; gap: 8px; }
     .cve-sep { display: none; }
@@ -455,20 +606,105 @@
       <li class="bg-item">
         <span class="bg-company">Diconium</span>
         <span class="bg-role">Senior Penetration Tester — Volkswagen Group ECU security</span>
+        <span class="bg-date">Apr 2022 – Present</span>
       </li>
       <li class="bg-item">
         <span class="bg-company">Knorr-Bremse</span>
         <span class="bg-role">Cyber Security Engineer — rail braking systems</span>
+        <span class="bg-date">Jul 2020 – Mar 2022</span>
       </li>
       <li class="bg-item">
         <span class="bg-company">Cyres Consulting</span>
         <span class="bg-role">Embedded Software Security — LiDAR, autonomous driving</span>
+        <span class="bg-date">Oct 2019 – Apr 2020</span>
       </li>
       <li class="bg-item">
         <span class="bg-company">Fraunhofer AISEC</span>
         <span class="bg-role">Hardware security research — side-channel, firmware RE</span>
+        <span class="bg-date">Oct 2017 – Jul 2018</span>
       </li>
     </ul>
+  </section>
+
+  <!-- OPEN SOURCE PROJECTS -->
+  <section>
+    <div class="section-label">Open Source Projects</div>
+    <div class="projects-list">
+      <div class="project-item">
+        <div class="project-header">
+          <a href="https://github.com/masjadaan/fw-inspector" target="_blank" rel="noopener noreferrer" class="project-name">fw-inspector</a>
+          <span class="project-status">active</span>
+        </div>
+        <p class="project-desc">Static security analysis pipeline for embedded firmware images. Extracts firmware components, runs 40+ security checks, generates a CycloneDX 1.5 SBOM, synthesizes an attack surface model, and enriches CVE findings with binary hardening flags and network reachability context.</p>
+      </div>
+      <div class="project-item">
+        <div class="project-header">
+          <a href="https://github.com/masjadaan/CVE-2025-29338" target="_blank" rel="noopener noreferrer" class="project-name">CVE-2025-29338</a>
+        </div>
+        <p class="project-desc">Advisory and PoC for a stack-based buffer overflow in the NXP moal.ko Wi-Fi kernel driver (CVSS 7.8). Configuration file line exceeding MAX_LINE_LEN overflows a fixed stack buffer, enabling kernel panic or arbitrary kernel-mode code execution.</p>
+      </div>
+      <div class="project-item">
+        <div class="project-header">
+          <a href="https://github.com/masjadaan/KernelExploitation" target="_blank" rel="noopener noreferrer" class="project-name">KernelExploitation</a>
+        </div>
+        <p class="project-desc">Hands-on Linux kernel exploitation research and PoC code in C. Covers Return-to-Userland (ret2usr) attack techniques based on the HXP 2020 CTF challenge. Companion repository to the YouTube kernel exploitation series.</p>
+      </div>
+      <div class="project-item">
+        <div class="project-header">
+          <a href="https://github.com/masjadaan/NetgearEnableTelnet" target="_blank" rel="noopener noreferrer" class="project-name">NetgearEnableTelnet</a>
+        </div>
+        <p class="project-desc">Python tool to unlock a hidden telnet interface on Netgear RAX30 routers by exploiting the Blowfish-based authentication mechanism. Demonstrates practical embedded device research and network service exploitation on consumer hardware.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING & TEACHING -->
+  <section>
+    <div class="section-label">Writing & Teaching</div>
+    <div class="writing-list">
+      <div class="writing-item">
+        <span class="writing-platform">Udemy</span>
+        <div class="writing-body">
+          <a href="https://udemy.com/course/can-bus-attacks" target="_blank" rel="noopener noreferrer" class="writing-title">CAN Bus Attacks</a>
+          <p class="writing-desc">Comprehensive course on Controller Area Network fundamentals and practical attack techniques — CAN protocol, tooling, and hands-on attack scenarios.</p>
+        </div>
+      </div>
+      <div class="writing-item">
+        <span class="writing-platform">YouTube</span>
+        <div class="writing-body">
+          <a href="https://youtube.com/@MahmoudJadaan" target="_blank" rel="noopener noreferrer" class="writing-title">Linux Kernel Exploitation: Return to Userland</a>
+          <p class="writing-desc">Video series on ret2usr kernel attacks based on the HXP 2020 CTF challenge.</p>
+        </div>
+      </div>
+      <div class="writing-item">
+        <span class="writing-platform">YouTube</span>
+        <div class="writing-body">
+          <a href="https://youtube.com/@MahmoudJadaan" target="_blank" rel="noopener noreferrer" class="writing-title">Emulation for Security Research: QEMU User & System Mode</a>
+          <p class="writing-desc">Practical series on cross-architecture emulation for firmware and binary security research.</p>
+        </div>
+      </div>
+      <div class="writing-item">
+        <span class="writing-platform">Medium</span>
+        <div class="writing-body">
+          <a href="https://medium.com/@masjadaan" target="_blank" rel="noopener noreferrer" class="writing-title">Bluetooth Low Energy Series</a>
+          <p class="writing-desc">Multi-part series covering BLE stack internals, advertising & scanning, and packet sniffing with Ubertooth.</p>
+        </div>
+      </div>
+      <div class="writing-item">
+        <span class="writing-platform">Medium</span>
+        <div class="writing-body">
+          <a href="https://medium.com/@masjadaan" target="_blank" rel="noopener noreferrer" class="writing-title">Heap Exploitation Series</a>
+          <p class="writing-desc">Fundamentals of heap memory layout and exploitation techniques for embedded and Linux targets.</p>
+        </div>
+      </div>
+      <div class="writing-item">
+        <span class="writing-platform">Medium</span>
+        <div class="writing-body">
+          <a href="https://medium.com/@masjadaan" target="_blank" rel="noopener noreferrer" class="writing-title">Hardware Security: JTAG Pinout Identification</a>
+          <p class="writing-desc">Practical tutorial on identifying and exploiting JTAG debug interfaces on production hardware.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- TOOLS -->
@@ -515,7 +751,26 @@
         <span class="contact-type">YouTube</span>
         <a href="https://youtube.com/@MahmoudJadaan" target="_blank" rel="noopener noreferrer" class="contact-value">youtube.com/@MahmoudJadaan</a>
       </div>
+      <div class="contact-line">
+        <span class="contact-type">Medium</span>
+        <a href="https://medium.com/@masjadaan" target="_blank" rel="noopener noreferrer" class="contact-value">medium.com/@masjadaan</a>
+      </div>
     </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <div class="section-label">Certifications</div>
+    <ul class="cert-list">
+      <li class="cert-item">
+        <span class="cert-name">CSX Cybersecurity Practitioner (CSX-P)</span>
+        <span class="cert-meta">ISACA · 2019</span>
+      </li>
+      <li class="cert-item">
+        <span class="cert-name">CompTIA Security+ ce</span>
+        <span class="cert-meta">CompTIA · 2016</span>
+      </li>
+    </ul>
   </section>
 
   <!-- FOOTER -->
